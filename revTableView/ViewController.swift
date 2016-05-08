@@ -1,10 +1,8 @@
-//
 //  ViewController.swift
 //  revTableView
 //
 //  Created by satoshiii on 2016/05/08.
 //  Copyright © 2016年 satoshiii. All rights reserved.
-//
 
 import UIKit
 
@@ -13,7 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet weak var myTableView: UITableView!
 	
 	var selectedIndex = -1
-	var sentoList = ["一の湯","御所の湯","まんだら湯","地蔵湯","鶴の湯"]
+	var sentoList = ["一の湯","御所の湯","まんだら湯","地蔵湯"]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,7 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	// tableView(tableView: UITableView, did"Des"electRowAtIndexPath indexPath: NSIndexPath)
 	// になっていた。間違いやすい注意
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-		print("\(indexPath.row)行目の風呂を選択")
+		print("\(indexPath.row)")
 		selectedIndex = indexPath.row
 		performSegueWithIdentifier("showsecView", sender: nil)
 

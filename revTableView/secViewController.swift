@@ -1,10 +1,8 @@
-//
 //  secViewController.swift
 //  revTableView
 //
 //  Created by satoshiii on 2016/05/08.
 //  Copyright © 2016年 satoshiii. All rights reserved.
-//
 
 import UIKit
 
