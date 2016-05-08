@@ -11,7 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	@IBOutlet weak var myTableView: UITableView!
 	
 	var selectedIndex = -1
-	var sentoList = ["一の湯","御所の湯","まんだら湯","地蔵湯"]
+	var sentoList = ["ダージリン","アッサム","オレンジペコ","アールグレイ"]
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

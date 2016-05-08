@@ -8,7 +8,11 @@ import UIKit
 
 class secViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var myTeaName: UILabel!
+	@IBOutlet weak var myTeaEx: UITextView!
+	@IBOutlet weak var myTeaPic: UIImageView!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
     }
@@ -16,9 +20,27 @@ class secViewController: UIViewController {
 	var selectedIndex = -1
 	
 	override func viewWillAppear(animated: Bool) {
-		print(selectedIndex)
+		
+		let r = (selectedIndex)
+		// print(selectedIndex)
+		let path = NSBundle.mainBundle().pathForResource("json", ofType: "txt")
+		let jsondata = NSData(contentsOfFile: path!)
+		
+		// 辞書データに変換
+		let jsonArray = (try! NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
+		
+		// 配列の個数だけ繰り返して表示する
+		 for dat in jsonArray {
+			 let d1 = dat["name"] as! String
+			 let d2 = dat["ex"] as! String
+			 // print("name[\(d1)] ex=[\(d2)]")
+		 }
+		myTeaPic.image = UIImage(named: "\(r).png")
+//		myTeaName.text = 
+		print(jsonArray)
 	}
-
+	
+	
 	
 	
 	
