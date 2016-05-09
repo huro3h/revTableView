@@ -42,9 +42,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 		var secVC = segue.destinationViewController as! secViewController
 		// secVCにselected.Indexを書けばエラーが消えた
 		secVC.selectedIndex = selectedIndex
-		
+		// secViewController.sentoList = self.sentoList
+		// 配列の入った変数をsegueで受け渡す準備
+		// Cannot assign value of type '[String]' to type 'String'
+		// ↑ エラー。違う型の箱にString型の値を入れようとしている
+		// 次画面でString型の箱を用意していない
+		secVC.sentoList = self.sentoList
 	}
-	
 
 	
 	
