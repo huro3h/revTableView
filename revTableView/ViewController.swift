@@ -23,8 +23,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	
 	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell
 	{
-		var cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
+		let cell = UITableViewCell(style: .Default, reuseIdentifier: "myCell")
 		cell.textLabel!.text = "\(sentoList[indexPath.row])"
+		cell.imageView?.image = UIImage(named: "\(indexPath.row).png")
 		return cell
 	}
 	
@@ -39,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		var secVC = segue.destinationViewController as! secViewController
+		let secVC = segue.destinationViewController as! secViewController
 		// secVCにselected.Indexを書けばエラーが消えた
 		secVC.selectedIndex = selectedIndex
 		// secViewController.sentoList = self.sentoList
